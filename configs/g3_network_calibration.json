@@ -1,0 +1,70 @@
+{
+  "protocol_version": "g3b_calibration_v1.0",
+  "reference_simulator": {
+    "name": "ns-3",
+    "version": "3.47",
+    "standard": "IEEE 802.11p",
+    "channel_number": 172,
+    "channel_width_mhz": 10,
+    "center_frequency_mhz": 5860,
+    "data_mode": "OfdmRate6MbpsBW10MHz",
+    "control_mode": "OfdmRate6MbpsBW10MHz",
+    "mac": "AdhocWifiMac",
+    "queue": "ns-3 Wi-Fi MAC default",
+    "propagation": "LogDistancePropagationLossModel",
+    "path_loss_exponent": 2.2,
+    "reference_loss_db": 46.6777,
+    "tx_power_dbm": 20.0,
+    "rx_noise_figure_db": 7.0
+  },
+  "probe_traffic": {
+    "vehicle_count": 8,
+    "formation": "side_by_side",
+    "lateral_spacing_m": 3.6,
+    "packet_size_bytes": 200,
+    "rate_hz": 10.0,
+    "warmup_s": 2.0,
+    "measurement_s": 20.0
+  },
+  "regimes": [
+    {
+      "id": "light",
+      "paper_label": "C1",
+      "background_nodes": 0,
+      "background_rate_hz": 0.0,
+      "background_radius_m": 60.0
+    },
+    {
+      "id": "moderate",
+      "paper_label": "C2",
+      "background_nodes": 16,
+      "background_rate_hz": 20.0,
+      "background_radius_m": 60.0
+    },
+    {
+      "id": "heavy",
+      "paper_label": "C3",
+      "background_nodes": 48,
+      "background_rate_hz": 50.0,
+      "background_radius_m": 60.0
+    }
+  ],
+  "pilot": {
+    "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "fit_seeds": [1, 2, 3, 4, 5],
+    "holdout_seeds": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  },
+  "development_history": "The initial five-seed pilot exposed unstable tail estimates and motivated the empirical inverse-CDF adapter. The confirmation keeps seeds 6-15 untouched and retains all original acceptance thresholds.",
+  "metrics": {
+    "aoi_sampling_period_s": 0.01,
+    "delay_quantiles": [0.5, 0.95, 0.99]
+  },
+  "acceptance": {
+    "pdr_absolute_error_max": 0.03,
+    "delay_median_relative_error_max": 0.15,
+    "delay_p95_relative_error_max": 0.20,
+    "aoi_mean_relative_error_max": 0.20,
+    "aoi_p95_relative_error_max": 0.25
+  },
+  "claim_boundary": "Calibration applies to 200-byte, 10-Hz one-hop broadcasts among eight agents under the three frozen background-load conditions C1-C3; these identifiers are experiment-specific conditions, not standardized V2X severity classes or a universal channel model."
+}

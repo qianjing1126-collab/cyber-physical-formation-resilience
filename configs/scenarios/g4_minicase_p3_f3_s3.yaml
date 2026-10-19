@@ -1,0 +1,10 @@
+{
+  "extends": "g4_minicase_base.yaml",
+  "meta": {"scenario": "minicase_p3_f3_adjacent", "method": "S3"},
+  "formation": {
+    "layout_id": "F3",
+    "heterogeneity_min": 0.9,
+    "heterogeneity_max": 1.1
+  },
+  "failure": {"type": "P-2A", "targets": [4, 5]}
+}

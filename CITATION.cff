@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this research software."
+type: software
+repository-code: "https://github.com/qianjing1126-collab/cyber-physical-formation-resilience"
+license: MIT
+title: "Research code for Cyber-Physical Resilience in Networked Cooperative Formation Systems: Topology Optimization and Formation Recovery"
+authors:
+  - family-names: Sun
+    given-names: Ke
+  - family-names: Qian
+    given-names: Zhonghao
+  - family-names: Xing
+    given-names: Zhiwei
+abstract: "Simulation code, configurations, and archived results for communication topology optimization, coordination-weight design, and formation recovery."
+keywords:
+  - cyber-physical systems
+  - cooperative formation systems
+  - network survivability
+  - topology optimization
+  - formation recovery

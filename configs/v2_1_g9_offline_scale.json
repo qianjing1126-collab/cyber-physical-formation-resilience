@@ -1,0 +1,27 @@
+{
+  "protocol_version": "experiment_protocol_v2.1",
+  "gate": "V2.1-G9",
+  "node_counts": [8, 9, 10, 11, 12, 13, 14, 15, 16],
+  "f": 2,
+  "minimum_degree": 3,
+  "edge_budget_rule": "minimum count |E|=ceil((f+1)N/2) with a complete candidate graph",
+  "exact_enumeration_node_counts": [8],
+  "solver": "CLARABEL",
+  "time_limit_s": 120.0,
+  "rounding_random_restarts": 0,
+  "rounding_max_swap_rounds": 3,
+  "rounding_seed": 20260826,
+  "total_weight_budget_rule": "one unit per selected edge",
+  "w_max": 2.0,
+  "k_p": 1.2,
+  "k_v": 2.0,
+  "delay_requirement": {
+    "state_message_period_s": 0.10,
+    "control_period_s": 0.05,
+    "admitted_network_tail_s": 0.02,
+    "engineering_allowance_s": 0.01,
+    "target_delay_margin_s": 0.18
+  },
+  "numerical_feasibility_tolerance": 0.00005,
+  "interpretation": "exact enumeration for N=8 and relaxation-rounding-repair with complete scenario recertification for N=9,...,16; odd N uses the handshaking-minimal degree sequence (4,3,...,3)"
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "g4_minicase_base.yaml",
+  "meta": {"scenario": "minicase_p3_f2_nonadjacent", "method": "S3"},
+  "formation": {
+    "layout_id": "F2",
+    "longitudinal_offsets": [-0.25, 0.25, -0.25, 0.25, -0.25, 0.25, -0.25, 0.25]
+  },
+  "failure": {"type": "P-2N", "targets": [3, 6]}
+}

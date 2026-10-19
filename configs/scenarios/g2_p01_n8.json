@@ -1,0 +1,8 @@
+{
+  "experiment": "G2_P0_1_stage1_structural_pilot",
+  "n": 8,
+  "f": 2,
+  "edge_count": 12,
+  "z_req": 0.25,
+  "random_seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+}

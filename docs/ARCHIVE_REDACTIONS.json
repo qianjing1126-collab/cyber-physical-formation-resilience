@@ -1,0 +1,26 @@
+[
+  {
+    "path": "runs/v2_1/g2/V21_G2_analysis_v5/source_matrix.json",
+    "field": "path",
+    "original_sha256": "462e9f9ab7f5033317e1888c6812e7f37ffb592729b3834eb2b484176d15359f",
+    "public_sha256": "a7454291cab84c2b56fb6232af815e277216e409eea46a9077fe3c866046fd09",
+    "replacement": "runs/v2_1/g2/V21_G2_matrix_v5.json",
+    "reason": "remove original workstation prefix; numerical values unchanged"
+  },
+  {
+    "path": "runs/v2_1/g3/V21_G3_stage2_weights_N8_f2_retry03/summary.json",
+    "field": "source",
+    "original_sha256": "8f32243d58ea2d597759516b1bd981cba6464bf4bfdcaf904037f233800d28e4",
+    "public_sha256": "40ac8a59a20438a310ff331c387d142088e996fba5add161212278409e4b4cca",
+    "replacement": "runs/v2_1/g1/V21_G1_stage1_structural_N8_f2_retry01",
+    "reason": "remove original workstation prefix; numerical values unchanged"
+  },
+  {
+    "path": "runs/v2_1/g9/V21_G9_offline_stage12_scale/source_identity.json",
+    "field": "config_path",
+    "original_sha256": "b4732980047098b8e0084c21ced088933613474a78754aa9bcb286134cb62d5f",
+    "public_sha256": "dec2573d222d474d7f9e610c4510902603350ce4e3c2f9c1407a0d9a6c25b094",
+    "replacement": "configs/v2_1_g9_offline_scale.json",
+    "reason": "remove original workstation prefix; numerical values unchanged"
+  }
+]

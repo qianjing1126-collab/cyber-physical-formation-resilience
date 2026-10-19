@@ -1,0 +1,10 @@
+{
+  "extends": "g1_mce1.yaml",
+  "meta": {"scenario": "mce1_g3b3_light", "method": "stage3_g3b3_two_state"},
+  "network": {
+    "backend": "packet_event", "access_delay": 0.0, "propagation_delay": 0.0,
+    "jitter": 0.0, "loss_probability": 0.0,
+    "two_state_profile_file": "../network/g3b3_two_state_parameters.json",
+    "two_state_regime": "light"
+  }
+}

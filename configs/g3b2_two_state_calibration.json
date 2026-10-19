@@ -1,0 +1,37 @@
+{
+  "model_protocol_version": "g3b2_two_state_v1.0",
+  "trace_protocol_version": "g3b_calibration_v1.0",
+  "regimes": ["light", "moderate", "heavy"],
+  "seeds": {
+    "all": [1, 2, 3, 4, 5, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+    "development": [1, 2, 3, 4, 5],
+    "untouched_holdout": [16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+  },
+  "state_definition": {
+    "threshold_rule": "max(training_delay_q75, training_delay_q50 + minimum_tail_offset_s)",
+    "minimum_tail_offset_s": 0.0001,
+    "packet_event_is_contended_if": "median received delay exceeds threshold or any intended probe receiver misses the broadcast",
+    "state_scope": "one shared state per transmitter broadcast across all intended probe receivers",
+    "state_dynamics": "first_order_two_state_markov_chain",
+    "transition_smoothing": 1.0,
+    "loss_smoothing": 0.5
+  },
+  "delay_model": {
+    "type": "state_conditional_piecewise_empirical_inverse_cdf",
+    "probabilities": [0.0, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.99, 1.0]
+  },
+  "metrics": {
+    "aoi_sampling_period_s": 0.01
+  },
+  "acceptance": {
+    "pdr_absolute_error_max": 0.03,
+    "delay_median_relative_error_max": 0.15,
+    "delay_p95_relative_error_max": 0.20,
+    "aoi_mean_relative_error_max": 0.20,
+    "aoi_p95_relative_error_max": 0.25,
+    "contention_event_rate_absolute_error_max": 0.03,
+    "state_persistence_absolute_error_max": 0.15
+  },
+  "development_history": "G3-B1 failed the light/moderate p95-delay gates because its packetwise unconditional delay draws could not represent sparse common contention events. G3-B2 is frozen before reading seeds 16-25.",
+  "claim_boundary": "The two-state adapter is limited to the frozen eight-vehicle, 200-byte, 10-Hz IEEE 802.11p calibration regimes and is not a universal V2X channel model."
+}

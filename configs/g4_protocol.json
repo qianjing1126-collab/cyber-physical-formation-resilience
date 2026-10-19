@@ -1,0 +1,46 @@
+{
+  "protocol_version": "g4_recovery_safety_v1.1",
+  "paired_seeds": [101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130],
+  "anchor": {
+    "N": 8,
+    "network_profile": "moderate",
+    "network_parameter_file": "network/g3b3_two_state_parameters.json",
+    "t_start_s": 0.0,
+    "t_end_s": 20.0,
+    "failure_time_s": 5.0,
+    "confirmation_time_s": 5.5,
+    "zeta_r": 0.95,
+    "evaluation_window_s": 15.0,
+    "holding_time_s": 2.0,
+    "safety_clearance_m": 0.5,
+    "ax_limit_mps2": 1.5,
+    "ay_limit_mps2": 1.5
+  },
+  "paths": {
+    "P1": {"type": "straight", "length_m": 220.0},
+    "P2": {"type": "constant_curvature", "length_m": 220.0, "radius_m": 80.0},
+    "P3": {"type": "quintic_lateral_transition", "length_m": 220.0, "transition_start_m": 40.0, "transition_length_m": 80.0, "lateral_shift_m": 12.0}
+  },
+  "layouts": {
+    "F1": {"type": "homogeneous_ordered", "coverage_width_m": 4.0, "required_overlap_m": 0.4, "longitudinal_offsets_m": [0,0,0,0,0,0,0,0]},
+    "F2": {"type": "bounded_stagger_ordered", "coverage_width_m": 4.0, "required_overlap_m": 0.4, "epsilon_parallel_m": 0.5, "longitudinal_offsets_m": [-0.25,0.25,-0.25,0.25,-0.25,0.25,-0.25,0.25]},
+    "F3": {"type": "heterogeneous_ordered", "coverage_width_factor_min": 0.9, "coverage_width_factor_max": 1.1, "recovery_limit_factor_min": 0.9, "recovery_limit_factor_max": 1.1, "required_overlap_m": 0.4, "nominal_minimum_center_spacing_m": 3.5, "sampling_rule": "bounded_draw_conditioned_on_nominal_overlap_and_body_clearance"}
+  },
+  "faults": {
+    "P-1": {"targets": [4]},
+    "P-2A": {"targets": [4,5]},
+    "P-2N": {"targets": [3,6]}
+  },
+  "methods": {
+    "B0": "no_recovery",
+    "B9": "sequential_local_predecessor_compression",
+    "B11": "central_hungarian_constrained_bezier_adaptation",
+    "S3": "distributed_ordered_simultaneous_quintic_recovery"
+  },
+  "modules": {
+    "P0-4": {"paths": ["P1","P2","P3"], "layouts": ["F1"], "faults": ["P-1"], "methods": ["B0","B9","B11","S3"], "expected_runs": 360},
+    "P0-5": {"paths": ["P3"], "layouts": ["F1","F2","F3"], "faults": ["P-2A","P-2N"], "methods": ["B9","B11","S3"], "expected_runs": 540}
+  },
+  "expected_total_runs": 900,
+  "claim_boundary": "Ordered continuous-coverage layouts F1-F3 under the frozen N=8, moderate-network, P1-P3 and one/two confirmed-dropout settings; not arbitrary 2-D formations."
+}

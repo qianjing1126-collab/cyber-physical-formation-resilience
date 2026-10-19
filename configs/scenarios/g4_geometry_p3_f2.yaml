@@ -1,0 +1,6 @@
+{
+  "extends": "../base.yaml",
+  "meta": {"module": "G4DEV", "scenario": "geometry_p3_f2", "method": "geometry_smoke", "base_seed": 101},
+  "path": {"path_id": "P3", "length": 220.0, "transition_start": 40.0, "transition_length": 80.0, "lateral_shift": 12.0},
+  "formation": {"layout_id": "F2", "longitudinal_offsets": [-0.25,0.25,-0.25,0.25,-0.25,0.25,-0.25,0.25]}
+}

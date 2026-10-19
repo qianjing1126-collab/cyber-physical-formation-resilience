@@ -1,0 +1,31 @@
+{
+  "protocol_version": "experiment_protocol_v2.1",
+  "gate": "V2.1-G3",
+  "g1_source": "runs/v2_1/g1/V21_G1_stage1_structural_N8_f2_retry01",
+  "n": 8,
+  "f": 2,
+  "edge_count": 12,
+  "topology_selection_policy": "pre-specified original-manuscript 3-regular representative satisfying z_req=0.25 at the minimum 12-edge budget",
+  "topology_edges": [[1,8], [2,8], [5,8], [1,4], [1,7], [2,3], [2,5], [3,6], [3,7], [4,5], [4,6], [6,7]],
+  "total_weight_budget": 12.0,
+  "w_max": 2.0,
+  "k_p": 1.2,
+  "k_v": 2.0,
+  "delay_requirement": {
+    "state_message_period_s": 0.10,
+    "control_period_s": 0.05,
+    "admitted_network_tail_s": 0.02,
+    "engineering_allowance_s": 0.01,
+    "target_delay_margin_s": 0.18,
+    "interpretation": "survive one missed 10 Hz state update, wait at most one control cycle for actuation, include the admitted 20 ms network tail, and retain a 10 ms engineering allowance"
+  },
+  "frontier_lambda_caps": [1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 4.25, 4.5, 4.75, 5.0, 5.25, 5.5, 6.0],
+  "candidate_samples": 20000,
+  "candidate_seed": 20260811,
+  "primary_solver": "CLARABEL",
+  "independent_solver": "SCS",
+  "time_limit_s": 60.0,
+  "numerical_feasibility_tolerance": 0.00005,
+  "cross_solver_relative_tolerance": 0.001,
+  "selection_rule": "derive the spectral cap from the pre-specified information-freshness requirement; no data-selected weighted sum and no unsupported intrinsic-knee claim"
+}

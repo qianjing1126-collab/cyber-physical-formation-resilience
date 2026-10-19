@@ -1,0 +1,29 @@
+{
+  "policy_version": "G3-A-v1",
+  "primary_sdp_solver": "CLARABEL",
+  "independent_sdp_solver": "SCS",
+  "time_limit_s": 60.0,
+  "accepted_solver_statuses": ["optimal", "optimal_inaccurate"],
+  "status_rule": "optimal_inaccurate is provisional and is accepted only after numerical recertification and independent-solver agreement",
+  "numerical_feasibility_tolerance": 0.00005,
+  "cross_solver_relative_tolerance": 0.001,
+  "timeout_rule": "retain and report the run; never delete it; a feasible incumbent may be reported only after full scenario recertification",
+  "infeasibility_rule": "do not declare infeasibility from an inaccurate status; require agreement of two solvers or an analytical certificate",
+  "stage1_claim_rule": "report exact optimality only when complete enumeration or a valid global certificate exists; otherwise report a certified feasible incumbent, an SDP bound, and their bound gap",
+  "stage1": {
+    "n": 8,
+    "f": 2,
+    "edge_count": 12,
+    "z_req": 0.25,
+    "rounding_restarts": 12,
+    "rounding_seed": 20260806,
+    "exact_enumeration": true
+  },
+  "stage2": {
+    "lambda_cap": 4.0,
+    "total_weight_budget": 12.0,
+    "w_max": 2.0,
+    "k_p": 1.2,
+    "k_v": 2.0
+  }
+}

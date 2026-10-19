@@ -1,0 +1,17 @@
+{
+  "extends": "../base.yaml",
+  "meta": {
+    "scenario": "mce1_single_dropout",
+    "method": "stage3"
+  },
+  "failure": {
+    "type": "P-1",
+    "targets": [4],
+    "t_d": 5.0,
+    "t_c": 5.5
+  },
+  "recovery": {
+    "enabled": true
+  }
+}
+

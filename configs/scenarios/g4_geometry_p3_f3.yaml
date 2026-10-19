@@ -1,0 +1,6 @@
+{
+  "extends": "../base.yaml",
+  "meta": {"module": "G4DEV", "scenario": "geometry_p3_f3", "method": "geometry_smoke", "base_seed": 101},
+  "path": {"path_id": "P3", "length": 220.0, "transition_start": 40.0, "transition_length": 80.0, "lateral_shift": 12.0},
+  "formation": {"layout_id": "F3", "heterogeneity_min": 0.9, "heterogeneity_max": 1.1}
+}

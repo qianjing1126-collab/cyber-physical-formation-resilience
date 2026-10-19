@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-19",
+  "selected_unit_tests_passed": 38,
+  "selected_test_modules": [
+    "test_u01_u12",
+    "test_g3_network",
+    "test_g3_network_b3",
+    "test_g3_network_two_state",
+    "test_g4_geometry",
+    "test_v21_g2",
+    "test_v21_g3",
+    "test_v21_g4",
+    "test_v21_g9"
+  ],
+  "formal_experimental_pdf_panels_generated": 11,
+  "original_per_run_manifests_verified": 16,
+  "restored_archive_files_verified": 139,
+  "core_simulation_modules_changed": false,
+  "numerical_records_changed": false,
+  "all_experiments_rerun": false,
+  "raw_ns3_trace_recalibration_rerun": false,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "cvxpy": "1.9.3",
+    "matplotlib": "3.11.2",
+    "clarabel": "0.11.1",
+    "scs": "3.3.1"
+  }
+}

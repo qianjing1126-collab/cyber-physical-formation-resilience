@@ -1,0 +1,19 @@
+{
+  "extends": "g1_mce1_g3b3_moderate.yaml",
+  "meta": {
+    "protocol_version": "g4_recovery_safety_v1.2",
+    "module": "G4DEV2",
+    "scenario": "minicase_p3_f1_single",
+    "method": "S3",
+    "base_seed": 101
+  },
+  "path": {
+    "path_id": "P3",
+    "length": 220.0,
+    "transition_start": 40.0,
+    "transition_length": 80.0,
+    "lateral_shift": 12.0
+  },
+  "formation": {"layout_id": "F1"},
+  "recovery": {"enabled": true, "method": "S3"}
+}

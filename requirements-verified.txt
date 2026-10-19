@@ -1,0 +1,7 @@
+# Packaging verification environment; original author lock is uv.lock.
+numpy==2.3.5
+scipy==1.17.0
+cvxpy==1.9.3
+matplotlib==3.11.2
+clarabel==0.11.1
+scs==3.3.1

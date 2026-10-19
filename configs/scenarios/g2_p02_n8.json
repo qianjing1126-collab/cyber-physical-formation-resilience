@@ -1,0 +1,15 @@
+{
+  "experiment": "G2_P0_2_stage2_delay_pilot",
+  "n": 8,
+  "f": 2,
+  "edge_count": 12,
+  "k_p": 1.2,
+  "k_v": 2.0,
+  "lambda_cap": 4.0,
+  "total_weight_budget": 12.0,
+  "search_samples": 800,
+  "seed": 20260806,
+  "pade_order": 8,
+  "time_step": 0.002,
+  "duration": 25.0
+}

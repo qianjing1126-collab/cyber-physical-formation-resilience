@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "protocol_version": "experiment_protocol_v1.0",
+    "architecture_version": "sim_arch_v1.0",
+    "module": "G1",
+    "scenario": "base",
+    "method": "stage3",
+    "base_seed": 1
+  },
+  "time": {
+    "dt_dyn": 0.01,
+    "T_ctrl": 0.05,
+    "T_msg": 0.10,
+    "t_start": 0.0,
+    "t_end": 20.0
+  },
+  "vehicle": {
+    "N": 8,
+    "body_length": 8.0,
+    "body_width": 3.0,
+    "plow_width": 4.0,
+    "v_ref": 8.0,
+    "a_x_max": 1.5,
+    "a_y_max": 1.5
+  },
+  "path": {
+    "path_id": "P1",
+    "length": 220.0
+  },
+  "formation": {
+    "layout_id": "F1",
+    "slot_spacing": 3.6,
+    "required_overlap": 0.4,
+    "epsilon_perp": 0.0,
+    "epsilon_parallel": 0.5,
+    "anchor": "centroid"
+  },
+  "network": {
+    "backend": "ideal",
+    "fixed_delay": 0.0,
+    "packet_size": 200,
+    "rate_hz": 10.0,
+    "queue": "latest_sample_overwrite"
+  },
+  "control": {
+    "kp_s": 1.2,
+    "kv_s": 2.0,
+    "kp_d": 1.5,
+    "kv_d": 2.5,
+    "coupling_gain": 0.20,
+    "edge_weight": 1.0,
+    "logical_topology": "ring"
+  },
+  "failure": {
+    "type": "none",
+    "targets": [],
+    "t_d": null,
+    "t_c": null
+  },
+  "recovery": {
+    "enabled": false,
+    "method": "S3",
+    "algorithm": "stage3_rank_compression",
+    "zeta_r": 0.95,
+    "T_e": 15.0,
+    "T_h": 2.0,
+    "safety_clearance": 0.5,
+    "v_rec_max": 1.0,
+    "a_rec_max": 0.8,
+    "tracking_error_bound": 0.0,
+    "min_adjustment_time": 4.0
+  },
+  "output": {
+    "state_period": 0.01,
+    "metric_period": 0.05,
+    "immutable": true
+  }
+}

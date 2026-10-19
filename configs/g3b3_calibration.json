@@ -1,0 +1,68 @@
+{
+  "protocol_version": "g3b3_trace_v1.0",
+  "model_protocol_version": "g3b3_two_state_v1.0",
+  "reference_simulator": {
+    "name": "ns-3",
+    "version": "3.47",
+    "standard": "IEEE 802.11p",
+    "channel_number": 172,
+    "channel_width_mhz": 10,
+    "center_frequency_mhz": 5860,
+    "data_mode": "OfdmRate6MbpsBW10MHz",
+    "control_mode": "OfdmRate6MbpsBW10MHz",
+    "mac": "AdhocWifiMac",
+    "propagation": "LogDistancePropagationLossModel",
+    "path_loss_exponent": 2.2,
+    "reference_loss_db": 46.6777,
+    "tx_power_dbm": 20.0,
+    "rx_noise_figure_db": 7.0
+  },
+  "probe_traffic": {
+    "vehicle_count": 8,
+    "formation": "side_by_side",
+    "lateral_spacing_m": 3.6,
+    "packet_size_bytes": 200,
+    "rate_hz": 10.0,
+    "generation_jitter_fraction": 0.05,
+    "generation_schedule": "nonaccumulating_nominal_grid_jitter",
+    "warmup_s": 2.0,
+    "measurement_s": 20.0
+  },
+  "regimes": [
+    {"id": "light", "paper_label": "C1", "background_nodes": 0, "background_rate_hz": 0.0, "background_radius_m": 60.0},
+    {"id": "moderate", "paper_label": "C2", "background_nodes": 16, "background_rate_hz": 20.0, "background_radius_m": 60.0},
+    {"id": "heavy", "paper_label": "C3", "background_nodes": 48, "background_rate_hz": 50.0, "background_radius_m": 60.0}
+  ],
+  "pilot": {
+    "seeds": [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
+    "fit_seeds": [26, 27, 28, 29, 30, 31, 32, 33, 34, 35],
+    "holdout_seeds": [36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+  },
+  "state_definition": {
+    "threshold_rule": "max(training_delay_q75, training_delay_q50 + minimum_tail_offset_s)",
+    "minimum_tail_offset_s": 0.0001,
+    "packet_event_is_contended_if": "median received delay exceeds threshold or any intended probe receiver misses the broadcast",
+    "state_scope": "one shared state per transmitter broadcast across all intended probe receivers",
+    "state_dynamics": "first_order_two_state_markov_chain",
+    "transition_smoothing": 1.0,
+    "loss_smoothing": 0.5
+  },
+  "delay_model": {
+    "type": "state_conditional_piecewise_empirical_inverse_cdf",
+    "probabilities": [0.0, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.99, 1.0]
+  },
+  "metrics": {"aoi_sampling_period_s": 0.01},
+  "acceptance": {
+    "pdr_absolute_error_max": 0.03,
+    "delay_median_relative_error_max": 0.15,
+    "delay_p95_relative_error_max": 0.20,
+    "aoi_mean_relative_error_max": 0.20,
+    "aoi_p95_relative_error_max": 0.25,
+    "contention_event_rate_absolute_error_max": 0.03,
+    "state_persistence_absolute_error_max": 0.15,
+    "holdout_per_seed_contention_rate_std_max": 0.05,
+    "probe_interarrival_mean_relative_error_max": 0.01
+  },
+  "development_history": "G3-B3 changes the reference traffic process before generating seeds 26-45. It adds bounded independent per-beacon timing perturbations to eliminate whole-run phase locking observed in G3-B2.",
+  "claim_boundary": "The G3-B3 model is limited to the frozen eight-agent, 200-byte, mean-10-Hz IEEE 802.11p conditions C1-C3 with bounded nonaccumulating generation jitter; C1-C3 are experiment-specific identifiers rather than standardized severity classes."
+}

@@ -1,0 +1,22 @@
+{
+  "protocol_version": "experiment_protocol_v2.1",
+  "gate": "V2.1-G4",
+  "g3_source": "runs/v2_1/g3/V21_G3_stage2_weights_N8_f2_retry03",
+  "k_p": 1.2,
+  "k_v": 2.0,
+  "dt_s": 0.001,
+  "duration_s": 12.0,
+  "disturbance_duration_s": 1.5,
+  "disturbance_amplitude_mps2": 0.35,
+  "realistic_delay_s": 0.02,
+  "stress_delay_s": 0.16,
+  "stress_plot_end_s": 8.0,
+  "trace_delays_s": [0.02, 0.16, 0.20],
+  "stability_sweep_start_s": 0.001,
+  "stability_sweep_end_s": 0.22,
+  "stability_sweep_points": 111,
+  "pade_order": 8,
+  "settling_threshold_m": 0.05,
+  "settling_hold_s": 1.0,
+  "claim_boundary": "The 20 ms case represents the upper envelope of the admitted ns-3 calibration. The 160 and 200 ms common aligned delays are explicitly labeled theoretical stress tests, not measured airport-network delays."
+}

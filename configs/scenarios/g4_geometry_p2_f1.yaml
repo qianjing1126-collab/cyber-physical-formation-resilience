@@ -1,0 +1,5 @@
+{
+  "extends": "../base.yaml",
+  "meta": {"module": "G4DEV", "scenario": "geometry_p2_f1", "method": "geometry_smoke", "base_seed": 101},
+  "path": {"path_id": "P2", "length": 220.0, "radius": 80.0}
+}

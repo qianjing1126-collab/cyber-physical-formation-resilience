@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TNSM simulation configuration V1",
+  "type": "object",
+  "required": ["meta", "time", "vehicle", "path", "formation", "network", "control", "failure", "recovery", "output"],
+  "description": "Documentation schema. G1 performs equivalent checks with the standard library so no external jsonschema package is required."
+}
+

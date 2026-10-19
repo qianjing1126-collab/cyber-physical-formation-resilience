@@ -1,0 +1,22 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+build/
+dist/
+# Archived runs are distributed losslessly in data/archived_runs.zip.
+runs/
+# Reassembled locally from the lossless parts stored in data/archive_parts/.
+data/archived_runs.zip
+data/archived_runs.zip.*.tmp
+# Recreated plots are generated locally.
+figures/

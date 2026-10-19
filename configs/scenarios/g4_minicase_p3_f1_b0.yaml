@@ -1,0 +1,5 @@
+{
+  "extends": "g4_minicase_base.yaml",
+  "meta": {"method": "B0"},
+  "recovery": {"enabled": false, "method": "B0"}
+}
